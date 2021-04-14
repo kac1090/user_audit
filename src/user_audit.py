@@ -16,3 +16,6 @@ def clean_id(system_access_df):
 
 def join_data(employees_df, system_access_df):
     return employees_df.merge(system_access_df, left_on='employee_number', right_on='id', how='left')
+
+def null_data(master_df):
+    return master_df[master_df.isnull().any(axis=1)]
