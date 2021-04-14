@@ -15,4 +15,4 @@ def clean_id(system_access_df):
     
 
 def join_data(employees_df, system_access_df):
-    return pd.merge(employees_df, system_access_df, left_on='employee_number', right_on='id')
+    return employees_df.merge(system_access_df, left_on='employee_number', right_on='id', how='left')
